@@ -1,0 +1,46 @@
+name: nand
+version: 0.1.0
+spec: '0.1'
+kind: ip
+lang: bsv
+identity:
+  slug: nand-tapeout-bsv
+  display_name: Nand
+  summary: One sentence saying what this block does.
+  category: peripheral
+  subcategories:
+  - nand
+  ip_family: nand
+  integration_profile:
+  - apb4-slave
+  maturity: planned
+contract:
+  version: 1
+  ctrl:
+    shape: flat
+    aw: 8
+    dw: 32
+params:
+  dataWidth:
+    type: int
+    default: 32
+    range:
+    - 1
+    - 32
+    desc: width of the data and mirror registers
+features:
+  invert:
+    type: bool
+    default: false
+emit:
+- kind: bsv
+  package: Nand
+  module: mkNand
+  config_type: NandCfg
+  interface: NandIfc
+  ctrl: regs
+- kind: verilog-flat
+  bus: apb4
+deps:
+  hwcore: ^0.1
+  amba: ^0.1
