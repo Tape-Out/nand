@@ -5,8 +5,8 @@ kind: ip
 lang: bsv
 identity:
   slug: nand-tapeout-bsv
-  display_name: Nand
-  summary: One sentence saying what this block does.
+  display_name: NAND
+  summary: 'A NAND flash controller: ONFI, with BCH error correction.'
   category: peripheral
   subcategories:
   - nand
